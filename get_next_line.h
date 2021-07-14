@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 10:59:42 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/14 14:15:35 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/14 14:58:50 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
-#include "../ft_printf/lib/ft_printf.h"
+# include "../ft_printf/lib/ft_printf.h"
 
 char	*get_next_line(int fd);
 size_t	gnl_strlen(const char *s);
