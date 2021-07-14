@@ -6,13 +6,13 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 11:12:28 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/13 11:37:48 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/14 11:44:47 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	gnl_strlen(const char *s)
 {
 	int	count;
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *s)
 	return (count);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*gnl_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	s_len;
 	char	*substr;
@@ -33,7 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
+	s_len = gnl_strlen(s);
 	i = 0;
 	if (len > s_len)
 		len = s_len;
@@ -50,11 +50,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (i++ < start)
 		s++;
-	ft_strlcpy(substr, s, len + 1);
+	gnl_strlcpy(substr, s, len + 1);
 	return (substr);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	gnl_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned int	i;
 	size_t			size_src;
@@ -62,7 +62,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (src == NULL)
 		return (0);
-	size_src = ft_strlen(src);
+	size_src = gnl_strlen(src);
 	if ((int)size < 0)
 		size = size_src + 1;
 	if (size >= 2 && size_src != 0)
@@ -81,30 +81,41 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (size_src);
 }
 
-char	*ft_strchr(const char *s, int c)
+int	gnl_strchr_i(const char *s, int c)
 {
 	unsigned char	c_unsigned;
+	int				i;
 
+	i = 0;
 	c_unsigned = (unsigned char)c;
 	if (c_unsigned == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (*s != '\0')
+		return (-1);
+	while (s[i] != '\0')
 	{
-		if (*s == c_unsigned)
-			return ((char *)s);
-		s++;
+		if (s[i] == c_unsigned)
+			return (i);
+		i++;
 	}
-	return (NULL);
+	return (-1);
 }
 
-char	**ft_split_gnl(char **aux, char const *s, char c)
+size_t	gnl_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*newline;
+	char			*ptr;
+	unsigned int	i;
 
-	newline = ft_strchr(s, '\n');
-	while (*s)
+	if (size < gnl_strlen(dst))
+		return (gnl_strlen(src) + size);
+	ptr = dst + gnl_strlen(dst);
+	i = gnl_strlen(dst);
+	while (i < size - 1 && *src != '\0' && size >= 2)
 	{
-		if (newline)
-		s++;
-	}	
+		*ptr = *src;
+		ptr++;
+		src++;
+		i++;
+	}
+	if (size != 0)
+		*ptr = '\0';
+	return (gnl_strlen(dst) + gnl_strlen(src));
 }
