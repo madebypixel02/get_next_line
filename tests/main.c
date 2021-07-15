@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/14 22:53:31 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/15 12:31:27 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,13 @@ int	main(void)
 	while (1)
 	{
 		line = get_next_line(fd);
+		ft_printf("Line %d: %s", i, line);
 		if (!line)
+		{
+			free(line);
 			return (0);
-		ft_printf("Line %d: \"%s\"\n", i, line);
+		}
+		system("leaks a.out");
 		free(line);
 		i++;
 	}
