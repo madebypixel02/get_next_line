@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/15 12:31:27 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/15 12:52:32 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	main(void)
 	char	*line;
 
 	i = 1;
-	//fd = open("tests/J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt", O_RDONLY);
-	fd = open("tests/test.txt", O_RDONLY);
+	fd = open("tests/J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt", O_RDONLY);
+	//fd = open("tests/test.txt", O_RDONLY);
 	//fd = open("tests/basic_oneline.txt", O_RDONLY);
 	while (1)
 	{
@@ -31,9 +31,9 @@ int	main(void)
 		if (!line)
 		{
 			free(line);
+			system("leaks a.out");
 			return (0);
 		}
-		system("leaks a.out");
 		free(line);
 		i++;
 	}
