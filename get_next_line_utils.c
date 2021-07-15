@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 11:12:28 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/14 11:44:47 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/14 22:57:51 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	gnl_strlen(const char *s)
 	int	count;
 
 	count = 0;
+	if (!s)
+		return (0);
 	while (*s != '\0')
 	{
 		count++;
@@ -87,15 +89,17 @@ int	gnl_strchr_i(const char *s, int c)
 	int				i;
 
 	i = 0;
+	if (!s)
+		return(-1);
 	c_unsigned = (unsigned char)c;
-	if (c_unsigned == '\0')
-		return (-1);
 	while (s[i] != '\0')
 	{
 		if (s[i] == c_unsigned)
 			return (i);
 		i++;
 	}
+	if (c_unsigned == '\0')
+		return (i);
 	return (-1);
 }
 
