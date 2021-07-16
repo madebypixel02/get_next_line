@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 10:59:17 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/15 12:51:35 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/16 09:54:36 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ char	*gnl_shrink_buffer(char *buf, char *line)
 
 	line_len = gnl_strlen(line);
 	newbuf = gnl_substr(buf, line_len, gnl_strlen(buf) - line_len);
+	free(buf);
 	if (!newbuf)
 		return (NULL);
 	if (newbuf[0] == '\0')
 	{
 		free(newbuf);
-		newbuf = NULL;
+		return (NULL);
 	}
-	free(buf);
 	return (newbuf);
 }
 
