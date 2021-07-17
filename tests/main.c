@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 17:01:29 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:23:18 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main(void)
 {
-	//int		fd;
+	int		fd;
 	int		i;
 	char	*line;
 
@@ -25,10 +25,12 @@ int	main(void)
 	//fd = open("tests/test.txt", O_RDONLY);
 	//fd = open("tests/test2.txt", O_RDONLY);
 	//fd = open("tests/empty.txt", O_RDONLY);
+	//fd = open("tests/41_no_nl.txt", O_RDONLY);
+	fd = open("tests/big_line_no_nl.txt", O_RDONLY);
 	//fd = open("tests/basic_oneline.txt", O_RDONLY);
 	while (1)
 	{
-		line = get_next_line(100000);
+		line = get_next_line(fd);
 		ft_printf("Line %d: %s\n", i, line);
 		if (!line)
 		{

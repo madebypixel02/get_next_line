@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 11:12:28 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 16:21:48 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:00:13 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,8 @@ size_t	gnl_strlen(const char *s)
 	count = 0;
 	if (!s)
 		return (0);
-	while (*s != '\0')
-	{
+	while (s[count] != '\0')
 		count++;
-		s++;
-	}
 	return (count);
 }
 

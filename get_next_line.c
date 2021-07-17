@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 10:59:17 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 16:49:04 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:27:20 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ char	*get_next_line(int fd)
 	if (fd < 0 || fd > 4095 || BUFFER_SIZE < 0)
 		return (NULL);
 	line = NULL;
+	ft_printf("BUF: %d\n", gnl_strlen(buf[fd]));
 	if (gnl_strchr_i(buf[fd], '\n') == -1)
 	{
 		old_len = gnl_strlen(buf[fd]);
 		buf[fd] = gnl_expand_buffer(buf[fd], fd);
-		if (old_len == gnl_strlen(buf[fd]))
-			line = buf[fd];
+		if (old_len == gnl_strlen(buf[fd]) && buf[fd])
+			line = gnl_substr(buf[fd], 0, gnl_strlen(buf[fd]));
 	}
 	if (!buf[fd])
 		return (NULL);
@@ -48,13 +49,12 @@ char	*gnl_shrink_buffer(char *buf, char *line)
 	if (!buf || !line)
 		return (buf);
 	line_len = gnl_strlen(line);
-	newbuf = gnl_substr(buf, line_len, gnl_strlen(buf) - line_len);
-	if (gnl_strlen(buf) == gnl_strlen(newbuf) || !newbuf)
+	if ((int)gnl_strlen(buf) == line_len)
 	{
-		free(newbuf);
 		free(buf);
 		return (NULL);
 	}
+	newbuf = gnl_substr(buf, line_len, gnl_strlen(buf) - line_len);
 	free(buf);
 	return (newbuf);
 }
@@ -71,13 +71,15 @@ char	*gnl_expand_buffer(char *buf, int fd)
 		return (NULL);
 	nbytes = read(fd, aux, BUFFER_SIZE);
 	if (nbytes < 0)
+	{
+		free(aux);
 		return (NULL);
+	}
 	aux[nbytes] = '\0';
 	if (!aux[0])
 	{
 		free(aux);
-		free(buf);
-		return (NULL);
+		return (buf);
 	}
 	if (!buf)
 		return (aux);
