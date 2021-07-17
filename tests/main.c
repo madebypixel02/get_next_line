@@ -6,13 +6,12 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 18:57:56 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 19:24:00 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../get_next_line.h"
 #include <stdio.h>
-#include "../../ft_printf/lib/ft_printf.h"
 
 int	main(void)
 {
