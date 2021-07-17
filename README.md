@@ -62,7 +62,7 @@ To test this out on your system, I recommend that you have the following package
 gcc python-norminette
 ```
 * Clone the repository
-```
+```shell
 git clone https://github.com/madebypixel02/get_next_line.git
 cd get_next_line
 ```
@@ -72,12 +72,12 @@ This repository includes a main and a few sample txt files I used to test the fu
 The compilation defines a value for the variable ``BUFFER_SIZE`` with the ``-D`` flag. You can modify this value to check how it performs.
 
 Mac OS: feel free to check for leaks by uncommenting the ``system("leaks a.out")``
-```
+```shell
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && ./a.out | cat -e 
 ```
 
 Linux:
-```
+```shell
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && valgrind -q --leak-check=full -s ./a.out | cat -e 
 
 ```
