@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 20:55:38 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 20:56:15 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	main(void)
 	//fd_2 = open("tests/test2.txt", O_RDONLY);
 	//fd_1 = open("tests/empty.txt", O_RDONLY);
 	//fd_1 = open("tests/41_no_nl.txt", O_RDONLY);
-	fd_1 = open("tests/big_line_no_nl.txt", O_RDONLY);
-	fd_2 = open("tests/basic_oneline.txt", O_RDONLY);
-	//fd_2 = open("tests/the-king-james-bible.txt", O_RDONLY);
+	//fd_1 = open("tests/big_line_no_nl.txt", O_RDONLY);
+	//fd_2 = open("tests/basic_oneline.txt", O_RDONLY);
+	fd_2 = open("tests/the-king-james-bible.txt", O_RDONLY);
 	while (1)
 	{
 		line[fd_1] = get_next_line(fd_1);
