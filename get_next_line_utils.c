@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 11:12:28 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/14 22:57:51 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 16:21:48 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	gnl_strchr_i(const char *s, int c)
 
 	i = 0;
 	if (!s)
-		return(-1);
+		return (-1);
 	c_unsigned = (unsigned char)c;
 	while (s[i] != '\0')
 	{
