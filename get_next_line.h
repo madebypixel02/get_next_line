@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 10:59:42 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 18:42:04 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 19:08:13 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # define GET_NEXT_LINE_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
