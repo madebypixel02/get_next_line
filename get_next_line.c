@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 10:59:17 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 18:27:20 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:42:36 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*get_next_line(int fd)
 	if (fd < 0 || fd > 4095 || BUFFER_SIZE < 0)
 		return (NULL);
 	line = NULL;
-	ft_printf("BUF: %d\n", gnl_strlen(buf[fd]));
 	if (gnl_strchr_i(buf[fd], '\n') == -1)
 	{
 		old_len = gnl_strlen(buf[fd]);
@@ -64,18 +63,10 @@ char	*gnl_expand_buffer(char *buf, int fd)
 	char	*newbuf;
 	int		newlen;
 	char	*aux;
-	int		nbytes;
 
-	aux = malloc(BUFFER_SIZE + 1);
+	aux = gnl_newread(fd);
 	if (!aux)
 		return (NULL);
-	nbytes = read(fd, aux, BUFFER_SIZE);
-	if (nbytes < 0)
-	{
-		free(aux);
-		return (NULL);
-	}
-	aux[nbytes] = '\0';
 	if (!aux[0])
 	{
 		free(aux);
@@ -92,4 +83,22 @@ char	*gnl_expand_buffer(char *buf, int fd)
 	free(buf);
 	free(aux);
 	return (newbuf);
+}
+
+char	*gnl_newread(int fd)
+{
+	char	*aux;
+	int		nbytes;
+
+	aux = malloc(BUFFER_SIZE + 1);
+	if (!aux)
+		return (NULL);
+	nbytes = read(fd, aux, BUFFER_SIZE);
+	if (nbytes < 0)
+	{
+		free(aux);
+		return (NULL);
+	}
+	aux[nbytes] = '\0';
+	return (aux);
 }
