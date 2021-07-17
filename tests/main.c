@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 18:55:57 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:57:56 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main(void)
 	//fd = open("tests/41_no_nl.txt", O_RDONLY);
 	//fd = open("tests/big_line_no_nl.txt", O_RDONLY);
 	//fd = open("tests/basic_oneline.txt", O_RDONLY);
-	fd = open("tests/bible.txt", O_RDONLY);
+	//fd = open("tests/bible.txt", O_RDONLY);
+	fd = open("tests/the-king-james-bible.txt", O_RDONLY);
 	while (1)
 	{
 		line = get_next_line(fd);
