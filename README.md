@@ -84,8 +84,8 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 
 * Available text files
 
-| Filename | Description | Has Newline |
-| :------: | :---------: | :---------: |
+| Filename | Description | Ends with newline |
+| :------: | :---------: | :---------------: |
 | empty.txt | Empty file | :x: |
 | test.txt | A-Z with several newlines | :heavy_check_mark: |
 | test2.txt | Shorter version or text.txt | :heavy_check_mark: |
