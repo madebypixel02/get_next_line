@@ -95,13 +95,13 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 
 | Filename | Description | Ends with newline |
 | :------: | :---------: | :---------------: |
-| empty.txt | Empty file | :x: |
-| test.txt | A-Z with several newlines | :heavy_check_mark: |
-| test2.txt | Shorter version or text.txt | :heavy_check_mark: |
-| basic_oneline.txt | Single short line | :x: |
-| the-king-james-bible.txt | Very long book (Holy Bible) | :heavy_check_mark: |
-| big_line_no_nl.txt | very large single-line file (9999 chars) | :x: |
-| J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt | Harry Potter full book | :heavy_check_mark: |
+| ``empty.txt`` | Empty file | :x: |
+| ``test.txt`` | A-Z with several newlines | :heavy_check_mark: |
+| ``test2.txt`` | Shorter version or text.txt | :heavy_check_mark: |
+| ``basic_oneline.txt`` | Single short line | :x: |
+| ``the-king-james-bible.txt`` | Very long book (Holy Bible) | :heavy_check_mark: |
+| ``big_line_no_nl.txt`` | very large single-line file (9999 chars) | :x: |
+| ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter full book | :heavy_check_mark: |
 
 ## Summary
 This project was somewhat hard to grasp at first, but once I understood what to do it wasn't very hard to implement :)
