@@ -106,7 +106,7 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 
 ```
 
-* Example
+* Examples
 
 ![get_next_line Test Gif](https://s6.gifyu.com/images/get_next_line.gif)
 
