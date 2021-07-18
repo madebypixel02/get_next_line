@@ -96,4 +96,5 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 
 ## Summary
 This project was somewhat hard to grasp at first, but once I understood what to do it wasn't very hard to implement :)
+
 July 17th, 2021
