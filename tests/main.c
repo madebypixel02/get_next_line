@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 20:56:35 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/18 09:08:40 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	main(void)
 		}
 		if (!line[fd_1] && !line[fd_2])
 		{
-			free(line[fd_1]);
-			free(line[fd_2]);
 			//system("leaks a.out");
 			return (0);
 		}
