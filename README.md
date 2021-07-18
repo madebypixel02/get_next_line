@@ -75,13 +75,13 @@ This repository includes a main and a few sample txt files I used to test the fu
 
 The compilation defines a value for the variable ``BUFFER_SIZE`` with the ``-D`` flag. You can modify this value to check how it performs.
 
-* Mac OS: feel free to check for leaks by uncommenting the ``system("leaks a.out")``
+``Mac OS``: feel free to check for leaks by uncommenting the ``system("leaks a.out")``
 
 ```shell
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && ./a.out | cat -e 
 ```
 
-* Linux
+``Linux``
 
 ```shell
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && valgrind -q --leak-check=full -s ./a.out | cat -e 
