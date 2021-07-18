@@ -59,7 +59,7 @@ The bonus part of this project is quite simple:
 
 To test this out on your system, I recommend that you have the following packages installed:
 ```
-gcc python-norminette
+gcc python-norminette valgrind
 ```
 * Clone the repository
 ```shell
