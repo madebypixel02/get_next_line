@@ -17,10 +17,13 @@ char *get_next_line(int fd);
 ```
 Note: As of July 2021 the prototype changed, previously the prototype was ``int get_next_line(int fd, char **line);``
 
+
 * Input Parameters
+
 The function only receives an int ``fd``, which will be the file descriptor of an open file, or perhaps even the standard input if the file descriptor is zero.
 
 * Return Values
+
 This function only has two possible return values:
 
 | Return Value | Description |
