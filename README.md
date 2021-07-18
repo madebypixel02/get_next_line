@@ -38,15 +38,15 @@ This function only has two possible return values:
 
 | Name | Description |
 | :--: | :---------: |
-| get_next_line(int fd) | Reads from fd and returns one line or null |
-| gnl_newread(int fd) | Performs a new read of BUFFER_SIZE bytes and stores it in aux |
-| gnl_expand_buffer(char *buf, int fd) | Expands the static variable buf with a new read |
-| gnl_shrink_buffer(char *buf, char *line) | Shrinks static variable buf when a line has been selected |
-| gnl_strlen(const char *s) | Returns length of a string |
-| gnl_strchr_i(const char *s, int c) | Returns index of first occurrence of c in a string, or -1 |
-| gnl_strlcpy(char *dst, const char *src, size_t size) | Copies chars from src into dst, ensuring \0 |
-| gnl_substr(char const *s, unsigned int start, size_t len) | Allocates enough memory and performs gnl_strlcpy |
-| gnl_strlcat(char *dst, const char *src, size_t size) | Contatenates two strings |
+| ``get_next_line(int fd)`` | Reads from fd and returns one line or null |
+| ``gnl_newread(int fd)`` | Performs a new read of BUFFER_SIZE bytes and stores it in aux |
+| ``gnl_expand_buffer(char *buf, int fd)`` | Expands the static variable buf with a new read |
+| ``gnl_shrink_buffer(char *buf, char *line)`` | Shrinks static variable buf when a line has been selected |
+| ``gnl_strlen(const char *s)`` | Returns length of a string |
+| ``gnl_strchr_i(const char *s, int c)`` | Returns index of first occurrence of c in a string, or -1 |
+| ``gnl_strlcpy(char *dst, const char *src, size_t size)`` | Copies chars from src into dst, ensuring \0 |
+| ``gnl_substr(char const *s, unsigned int start, size_t len)`` | Allocates enough memory and performs gnl_strlcpy |
+| ``gnl_strlcat(char *dst, const char *src, size_t size)`` | Contatenates two strings |
 
 As previously mentioned, this project takes advantage of static variables, i.e. variables that keep their value after the function being called again. My approach at this function is a recursive one. Every time the function runs, it checks if there's a newline in the static variable. If there isn't one, a new read is performed, increasing the size of the static variable. When a line is found, the line is returned and the static variable has that line removed from it (it shrinks). If no newline is found the program starts again, recursively. Eventually, when nothing new is read, the remains of the static variable are returned and the function lastly returns null.
 
