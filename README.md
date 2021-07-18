@@ -128,7 +128,7 @@ This is an example running the above command for ``linux``
 | ``big_line_no_nl.txt`` | Long single-line file (9999 chars) | :x: | [Link](https://github.com/Tripouille/gnlTester/blob/master/files/big_line_no_nl) |
 | ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt) |
 
-Note: if you use the current ``main.c`` with a large ``BUFFER_SIZE`` you will get reports (valgrind) saying that some bytes are still reachable. This is normal since it happens when the static variable hasn't been emptied yet, whcih is the case here.
+Note: if you use the ``main.c`` with a large ``BUFFER_SIZE`` you might get reports (from valgrind) saying that some bytes are still reachable. This is normal since it happens when the static variable hasn't been emptied yet, whcih is the case here.
 
 ## Summary
 This project was somewhat hard to grasp at first, but once I understood what to do it wasn't very hard to implement :)
