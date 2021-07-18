@@ -54,8 +54,13 @@ As previously mentioned, this project takes advantage of static variables, i.e. 
 
 The bonus part of this project is quite simple:
 
-* Bonus 1: Single static variable. My first approach at ```get_next_line``` already had one static variable (buffer).
-* Bonus 2: Make it work with several file descriptors. All I had to do was make the static variable an array of strings, each corresponding to one file descriptor.
+* Bonus 1: Single static variable
+
+My first approach at ```get_next_line``` already had one static variable (buffer).
+
+* Bonus 2: Make it work with several file descriptors
+
+All I had to do was make the static variable an array of strings, each corresponding to one file descriptor.
 
 
 ## Installation
