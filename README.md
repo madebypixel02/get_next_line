@@ -102,7 +102,7 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 | :------: | :---------: | :---------------: |
 | ``empty.txt`` | Empty file | :x: |
 | ``test.txt`` | A-Z with several newlines | :heavy_check_mark: |
-| ``test2.txt`` | Shorter version or text.txt | :heavy_check_mark: |
+| ``test2.txt`` | Shorter version of ``test.txt`` | :heavy_check_mark: |
 | ``basic_oneline.txt`` | Single short line | :x: |
 | ``the-king-james-bible.txt`` | Very long book (Holy Bible) | :heavy_check_mark: |
 | ``big_line_no_nl.txt`` | very large single-line file (9999 chars) | :x: |
