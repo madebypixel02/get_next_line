@@ -127,6 +127,7 @@ This is an example running the above command for ``linux``
 | ``the-king-james-bible.txt`` | Very long book (Holy Bible) | :heavy_check_mark: | [Link](https://github.com/ErikSchierboom/sentencegenerator/blob/master/samples/the-king-james-bible.txt) |
 | ``big_line_no_nl.txt`` | Long single-line file (9999 chars) | :x: | [Link](https://github.com/Tripouille/gnlTester/blob/master/files/big_line_no_nl) |
 | ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt) |
+| ``J. K. Rowling - Harry Potter 3 - Prisoner of Azkaban.txt`` | Harry Potter book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%203%20-%20Prisoner%20of%20Azkaban.txt) |
 
 Note: if you use the ``main.c`` with a large ``BUFFER_SIZE`` you might get reports (from valgrind) saying that some bytes are still reachable. This is normal since it happens when the static variable hasn't been emptied yet, whcih is the case here.
 
