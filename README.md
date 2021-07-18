@@ -2,13 +2,16 @@
 Reading a line on a file descriptor is too tedious :neutral_face:
 
 ### Table of Contents
+
 * [Introduction](#introduction)
 * [How it Works](#how-it-works)
 * [Bonus](#bonus)
 * [Installation](#installation)
 * [Summary](#summary)
 
+
 ## Introduction
+
 In this project we must create a function that returns one line every time it is called, followed by a newline if the line has it. This project introduces the idea of static variables, which will be very useful for future projects. On top of that, we'll also find a way to define macros right when compiling!
 
 The function to implement is called ``get_next_line``, and will have the following prototype:
@@ -21,6 +24,7 @@ Note: As of July 2021 the prototype changed, previously the prototype was ``int 
 * Input Parameters
 
 The function only receives an int ``fd``, which will be the file descriptor of an open file, or perhaps even the standard input if the file descriptor is zero.
+
 
 * Return Values
 
@@ -58,9 +62,12 @@ The bonus part of this project is quite simple:
 
 My first approach at ```get_next_line``` already had one static variable (buffer).
 
+
+
 * ``Bonus 2`` Make it work with several file descriptors
 
 All I had to do was make the static variable an array of strings, each corresponding to one file descriptor.
+
 
 
 ## Installation
@@ -71,12 +78,14 @@ To test this out on your system, I recommend that you have the following package
 gcc python-norminette valgrind
 ```
 
+
 * Clone the repository
 
 ```shell
 git clone https://github.com/madebypixel02/get_next_line.git
 cd get_next_line
 ```
+
 * Testing the function
 
 This repository includes a main and a few sample txt files I used to test the function. The main opens two files to the file descriptors ``fd_1`` and ``fd_2``, and then loops throught fhe open files applying ``get_next_line`` to both open files and printing the lines until either file reading ends.
@@ -89,6 +98,7 @@ The compilation defines a value for the variable ``BUFFER_SIZE`` with the ``-D``
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && ./a.out | cat -e 
 ```
 
+
 ``Linux``
 
 ```shell
@@ -96,17 +106,27 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 
 ```
 
-* Available text files
+* Example
 
-| Filename | Description | Ends with newline |
-| :------: | :---------: | :---------------: |
-| ``empty.txt`` | Empty file | :x: |
-| ``test.txt`` | A-Z with several newlines | :heavy_check_mark: |
-| ``test2.txt`` | Shorter version of ``test.txt`` | :heavy_check_mark: |
-| ``basic_oneline.txt`` | Single short line | :x: |
-| ``the-king-james-bible.txt`` | Very long book (Holy Bible) | :heavy_check_mark: |
-| ``big_line_no_nl.txt`` | very large single-line file (9999 chars) | :x: |
-| ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter full book | :heavy_check_mark: |
+![get_next_line Test Gif](https://i.imgur.com/NfIuh1x.gif)
+
+![get_next_line Test Image](https://i.imgur.com/HvTQBuu.png)
+
+This is an example running the above command for ``linux``
+
+
+
+* Available txt files
+
+| Filename | Description | Ends with newline | Source |
+| :------: | :---------: | :---------------: | :----: |
+| ``empty.txt`` | Empty file | :x: | N/A |
+| ``test.txt`` | A-Z with several newlines | :heavy_check_mark: | N/A |
+| ``test2.txt`` | Shorter version of ``test.txt`` | :heavy_check_mark: | N/A |
+| ``basic_oneline.txt`` | Single short line | :x: | N/A |
+| ``the-king-james-bible.txt`` | Very long book (Holy Bible) | :heavy_check_mark: | [Link](https://github.com/ErikSchierboom/sentencegenerator/blob/master/samples/the-king-james-bible.txt) |
+| ``big_line_no_nl.txt`` | very large single-line file (9999 chars) | :x: | [Link](https://github.com/Tripouille/gnlTester/blob/master/files/big_line_no_nl) |
+| ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter full book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt) |
 
 ## Summary
 This project was somewhat hard to grasp at first, but once I understood what to do it wasn't very hard to implement :)
