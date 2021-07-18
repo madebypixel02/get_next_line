@@ -123,10 +123,10 @@ This is an example running the above command for ``linux``
 | ``empty.txt`` | Empty file | :x: | N/A |
 | ``test.txt`` | A-Z with several newlines | :heavy_check_mark: | N/A |
 | ``test2.txt`` | Shorter version of ``test.txt`` | :heavy_check_mark: | N/A |
-| ``basic_oneline.txt`` | Single short line | :x: | N/A |
+| ``basic_oneline.txt`` | Single short line A-Z | :x: | N/A |
 | ``the-king-james-bible.txt`` | Very long book (Holy Bible) | :heavy_check_mark: | [Link](https://github.com/ErikSchierboom/sentencegenerator/blob/master/samples/the-king-james-bible.txt) |
-| ``big_line_no_nl.txt`` | very large single-line file (9999 chars) | :x: | [Link](https://github.com/Tripouille/gnlTester/blob/master/files/big_line_no_nl) |
-| ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter full book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt) |
+| ``big_line_no_nl.txt`` | Long single-line file (9999 chars) | :x: | [Link](https://github.com/Tripouille/gnlTester/blob/master/files/big_line_no_nl) |
+| ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt) |
 
 ## Summary
 This project was somewhat hard to grasp at first, but once I understood what to do it wasn't very hard to implement :)
