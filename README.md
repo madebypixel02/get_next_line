@@ -54,11 +54,11 @@ As previously mentioned, this project takes advantage of static variables, i.e. 
 
 The bonus part of this project is quite simple:
 
-* Bonus 1: Single static variable
+* ``Bonus 1`` Single static variable
 
 My first approach at ```get_next_line``` already had one static variable (buffer).
 
-* Bonus 2: Make it work with several file descriptors
+* ``Bonus 2`` Make it work with several file descriptors
 
 All I had to do was make the static variable an array of strings, each corresponding to one file descriptor.
 
@@ -83,7 +83,7 @@ This repository includes a main and a few sample txt files I used to test the fu
 
 The compilation defines a value for the variable ``BUFFER_SIZE`` with the ``-D`` flag. You can modify this value to check how it performs.
 
-``Mac OS``: feel free to check for leaks by uncommenting the ``system("leaks a.out")``
+``Mac OS`` Feel free to check for leaks by uncommenting the ``system("leaks a.out")``
 
 ```shell
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && ./a.out | cat -e 
