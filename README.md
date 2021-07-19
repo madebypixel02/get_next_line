@@ -97,6 +97,7 @@ The compilation defines a value for the variable ``BUFFER_SIZE`` with the ``-D``
 ```shell
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && ./a.out | cat -e 
 ```
+Note: Because of printf's buffer management, you might not see the leak report at the bottom of the output
 
 
 ``Linux``
@@ -129,7 +130,7 @@ This is an example running the above command for ``linux``
 | ``J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt`` | Harry Potter book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt) |
 | ``J. K. Rowling - Harry Potter 3 - Prisoner of Azkaban.txt`` | Harry Potter book | :heavy_check_mark: | [Link](https://github.com/amephraim/nlp/blob/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%203%20-%20Prisoner%20of%20Azkaban.txt) |
 
-Note: if you use the ``main.c`` with a large ``BUFFER_SIZE`` you might get reports (from valgrind) saying that some bytes are still reachable. This is normal since it happens when the static variable hasn't been emptied yet, whcih is the case here.
+Note: if you use the ``main.c`` with a large ``BUFFER_SIZE`` you might get reports (from valgrind) saying that some bytes are still reachable. This is normal since it happens when the static variable hasn't been emptied yet, which is the case here with my main.
 
 ## Summary
 This project was somewhat hard to grasp at first, but once I understood what to do it wasn't very hard to implement :)
