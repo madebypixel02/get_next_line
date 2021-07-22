@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 10:59:42 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/17 19:08:04 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/07/22 17:39:10 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
 
-# define GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
+# ifndef BUFFER_SIZE
+
+#  define BUFFER_SIZE 42
+
+# endif
 char	*get_next_line(int fd);
 size_t	gnl_strlen(const char *s);
 int		gnl_strchr_i(const char *s, int c);
