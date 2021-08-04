@@ -6,7 +6,7 @@
 /*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:14:39 by aperez-b          #+#    #+#             */
-/*   Updated: 2021/07/18 13:24:12 by aperez-b         ###   ########.fr       */
+/*   Updated: 2021/08/04 10:46:42 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,19 @@
 int	main(void)
 {
 	int		fd_1;
-	int		fd_2;
 	int		i;
 	char	*line[4096];
 
 	i = 1;
-	fd_1 = open("tests/J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt", O_RDONLY);
-	fd_2 = open("tests/J. K. Rowling - Harry Potter 3 - Prisoner of Azkaban.txt", O_RDONLY);
-	//fd_1 = open("tests/test.txt", O_RDONLY);
-	//fd_2 = open("tests/test2.txt", O_RDONLY);
-	//fd_1 = open("tests/empty.txt", O_RDONLY);
-	//fd_1 = open("tests/big_line_no_nl.txt", O_RDONLY);
-	//fd_2 = open("tests/basic_oneline.txt", O_RDONLY);
-	//fd_2 = open("tests/the-king-james-bible.txt", O_RDONLY);
+	fd_1 = open("tests/J. K. Rowling - Harry Potter 1 - Sorcerer's Stone.txt", \
+					O_RDONLY);
 	while (1)
 	{
 		line[fd_1] = get_next_line(fd_1);
-		line[fd_2] = get_next_line(fd_2);
 		printf("Line %d for fd %d: %s\n", i, fd_1, line[fd_1]);
-		printf("Line %d for fd %d: %s\n", i, fd_2, line[fd_2]);
-		if (!line[fd_1] && line[fd_2])
-		{
-			free(line[fd_2]);
-			//system("leaks a.out");
+		if (!line[fd_1])
 			return (0);
-		}
-		if (line[fd_1] && !line[fd_2])
-		{
-			free(line[fd_1]);
-			//system("leaks a.out");
-			return (0);
-		}
-		if (!line[fd_1] && !line[fd_2])
-		{
-			//system("leaks a.out");
-			return (0);
-		}
 		free(line[fd_1]);
-		free(line[fd_2]);
 		i++;
 	}
 }
