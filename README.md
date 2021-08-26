@@ -109,8 +109,6 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 
 * Examples
 
-![get_next_line Test Gif](https://s6.gifyu.com/images/get_next_line.gif)
-
 ![get_next_line Test Image](https://i.imgur.com/HvTQBuu.png)
 
 This is an example running the above command for ``linux``
