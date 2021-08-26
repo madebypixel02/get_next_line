@@ -88,7 +88,7 @@ cd get_next_line
 
 * Testing the function
 
-This repository includes a main and a few sample txt files I used to test the function. The main program opens a file to the file descriptors ``fd_1``, and then loops through the open file applying ``get_next_line`` to the file printing the lines until the file reading ends.
+This repository includes a main and a few sample txt files I used to test the function. The main program opens a file to the file descriptor ``fd_1``, and then loops through the open file applying ``get_next_line`` to the file printing the lines until the file reading ends.
 
 The compilation defines a value for the variable ``BUFFER_SIZE`` with the ``-D`` flag. You can modify this value to check how differently it performs.
 
