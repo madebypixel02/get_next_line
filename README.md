@@ -88,11 +88,11 @@ cd get_next_line
 
 * Testing the function
 
-This repository includes a main and a few sample txt files I used to test the function. The main program opens two files to the file descriptors ``fd_1`` and ``fd_2``, and then loops through the open files applying ``get_next_line`` to both open files and printing the lines until either file reading ends.
+This repository includes a main and a few sample txt files I used to test the function. The main program opens a file to the file descriptor ``fd_1``, and then loops through the open file applying ``get_next_line`` to the file printing the lines until the file reading ends.
 
 The compilation defines a value for the variable ``BUFFER_SIZE`` with the ``-D`` flag. You can modify this value to check how differently it performs.
 
-``Mac OS`` Feel free to check for leaks by uncommenting the ``system("leaks a.out")``
+``Mac OS``: Feel free to check for leaks by adding the ``system("leaks a.out")`` to the file
 
 ```shell
 gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D BUFFER_SIZE=42 && ./a.out | cat -e 
@@ -108,8 +108,6 @@ gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c tests/main.c -D 
 ```
 
 * Examples
-
-![get_next_line Test Gif](https://s6.gifyu.com/images/get_next_line.gif)
 
 ![get_next_line Test Image](https://i.imgur.com/HvTQBuu.png)
 
