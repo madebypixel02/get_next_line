@@ -60,7 +60,7 @@ The bonus part of this project is quite simple:
 
 * ``Bonus 1`` Single static variable
 
-My first approach at ```get_next_line``` already had one static variable (buffer).
+My first approach at ``get_next_line`` already had one static variable (buffer).
 
 
 
