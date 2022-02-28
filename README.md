@@ -141,7 +141,7 @@ This project was somewhat hard to grasp at first, but once I understood what to 
 July 17th, 2021
 
 <p align="center">
-  <a href="https://github.com/madebypixel02/get_next_line">&#11013;</a>
+  <a href="https://github.com/madebypixel02/ft_printf">&#11013;</a>
   <a href="https://github.com/madebypixel02/42-Madrid-Cursus">&#127968;</a>
   <a href="https://github.com/madebypixel02/born2beroot">&#10145;</a>
 </p>
