@@ -2,9 +2,9 @@
 
 *Reading a line on a file descriptor is too tedious :neutral_face:*
 
-<p align="center">
+<div align="center">
   <img src=https://user-images.githubusercontent.com/40824677/149225116-4bc0f52c-1891-419a-853b-ac220c893fea.png />
-</p>
+</div>
 
 ### Table of Contents
 
@@ -139,9 +139,3 @@ Note: if you use the ``main.c`` with a large ``BUFFER_SIZE`` you might get repor
 This project was somewhat hard to grasp at first, but once I understood what to do it wasn't too hard to implement
 
 July 17th, 2021
-
-<p align="center">
-  <a href="https://github.com/madebypixel02/ft_printf">&#11013;</a>
-  <a href="https://github.com/madebypixel02/42-Madrid-Cursus">&#127968;</a>
-  <a href="https://github.com/madebypixel02/born2beroot">&#10145;</a>
-</p>
